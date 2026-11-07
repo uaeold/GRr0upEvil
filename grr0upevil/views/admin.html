@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Admin</title><link rel="icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css"></head><body>
+<div class="wrap" id="login"><h2>Admin login</h2><label for="em">Email</label><input id="em" type="email" autocomplete="username"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password">
+<div id="codeBox" hidden><label for="code">2FA code (authenticator app)</label><input id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></div>
+<div class="err" id="lerr" role="alert"></div><button class="btn" id="lbtn">Log in</button></div>
+
+<div class="wrap" id="panel" hidden>
+<div class="row"><b>Control panel</b><button class="btn ghost" id="out">Log out</button></div>
+
+<section class="panel"><h3>Overview</h3><div class="stats-row mono" id="stats"></div></section>
+
+<section class="panel"><h3>Add a tool</h3><form id="f">
+<label>Tool name</label><input name="name" required maxlength="80">
+<label>Description</label><textarea name="description" rows="3" maxlength="600"></textarea>
+<label>Type (Premium tools are only downloadable by members with the Discord premium role)</label><select name="category"><option value="free">Free</option><option value="premium">Premium</option></select>
+<label>File password (leave empty if the file has none)</label><input name="filePassword" maxlength="100">
+<label>Card image (optional, PNG/JPG/GIF/WEBP)</label><input name="image" type="file" accept="image/png,image/jpeg,image/gif,image/webp">
+<label>Tool file</label><input name="file" type="file" required>
+<div class="err" id="ferr" role="alert"></div><button class="btn" id="fbtn">Upload tool</button>
+</form></section>
+
+<section class="panel"><h3>Your tools</h3><div id="list"></div></section>
+
+<section class="panel"><h3>Team members</h3><form id="tf">
+<label>Name</label><input name="name" required maxlength="60">
+<label>Role</label><input name="role" maxlength="80" placeholder="e.g. Reverse Engineering">
+<label>Link (Discord, profile…) — must start with https://</label><input name="link" maxlength="200" placeholder="https://...">
+<label>Photo (optional)</label><input name="image" type="file" accept="image/png,image/jpeg,image/gif,image/webp">
+<div class="err" id="terr" role="alert"></div><button class="btn" id="tbtn">Add member</button>
+</form><div id="teamList" class="spaced"></div></section>
+
+<section class="panel"><h3>Site settings</h3><form id="sf">
+<label>Site name</label><input name="siteTitle" maxlength="60">
+<label>Discord invite link</label><input name="discord" maxlength="200">
+<label>About text</label><textarea name="aboutText" rows="3" maxlength="500"></textarea>
+<label>Contact text</label><textarea name="contactText" rows="3" maxlength="500"></textarea>
+<label>Terms &amp; disclaimer text (leave empty to use the built-in English/Arabic text)</label><textarea name="termsText" rows="6" maxlength="4000"></textarea>
+<div class="err" id="serr" role="alert"></div><button class="btn" id="sbtn">Save settings</button>
+</form></section>
+
+<section class="panel"><h3>Login activity <span class="meta mono">(admin login attempts — never shown to visitors)</span></h3>
+<div id="loginlog" class="mono"></div></section>
+</div>
+<script src="/admin.js"></script></body></html>

@@ -1,0 +1,1 @@
+{"name":"grr0upevil","version":"1.1.0","main":"server.js","engines":{"node":">=22"},"scripts":{"start":"node --env-file-if-exists=.env server.js","backup":"node --env-file-if-exists=.env backup.js","totp":"node totp-setup.js"},"dependencies":{"express":"^4.19.2","express-session":"^1.18.0","multer":"^2.5.0"}}

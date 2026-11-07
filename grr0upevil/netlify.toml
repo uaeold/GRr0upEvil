@@ -1,0 +1,41 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/proxy/api/:splat"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/auth/*"
+  to = "/.netlify/functions/proxy/auth/:splat"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/dl/*"
+  to = "/.netlify/functions/proxy/dl/:splat"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/thumb/*"
+  to = "/.netlify/functions/proxy/thumb/:splat"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/thumb-team/*"
+  to = "/.netlify/functions/proxy/thumb-team/:splat"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/t/*"
+  to = "/.netlify/functions/proxy/t/:splat"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/admin"
+  to = "/.netlify/functions/proxy/admin"
+  status = 200
+  force = true

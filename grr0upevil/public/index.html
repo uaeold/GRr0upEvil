@@ -1,0 +1,44 @@
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GRr0upEvil</title><!--OG--><link rel="icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css"></head><body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<header><a class="brand" href="/"><img src="/logo.png" alt="">GRr0upEvil<span class="cursor">&nbsp;</span></a>
+<nav><a href="/" data-i="home">Home</a><button data-open="about" data-i="about">About</button><button data-open="contact" data-i="contact">Contact</button>
+<a id="dLogin" href="/auth/discord" hidden data-i="discordLogin">Sign in with Discord</a><span id="dUser" hidden><b id="dName"></b> <button id="dOut" data-i="logout">Log out</button></span>
+<button id="sndBtn" aria-pressed="false" aria-label="Sound" title="Sound">🔇</button><button id="langBtn" aria-label="Language">عربي</button></nav></header>
+<section class="hero" id="top"><img src="/logo.png" alt="GRr0upEvil logo">
+<h1 class="glitch" id="siteTitle" data-text="GRr0upEvil Tools">GRr0upEvil Tools</h1>
+<p class="term mono" id="termLine" dir="ltr"></p>
+<div class="stats-strip mono" id="statsStrip"></div></section>
+
+<div class="controls">
+  <div class="tabs"><button class="on" data-f="all" data-i="tabAll">All tools</button><button data-f="free" data-i="tabFree">Free</button><button data-f="premium" data-i="tabPremium">Premium</button></div>
+  <div class="searchbar"><input id="search" class="mono" data-ip="search" placeholder="search tools..." aria-label="Search"><select id="sort" class="mono" aria-label="Sort">
+    <option value="new" data-i="sortNew">Newest</option><option value="downloads" data-i="sortDl">Most downloaded</option><option value="az" data-i="sortAz">A → Z</option></select></div>
+</div>
+<div class="backbar" id="backBar"><a class="btn ghost" href="/" data-i="back">← All tools</a></div>
+
+<main class="grid" id="grid"></main>
+<footer><span data-i="rights">© 2026 GRr0upEvil. All rights reserved.</span> · <a href="#" data-open="terms" data-i="terms">Terms & Disclaimer</a> · <a href="#" data-open="share" data-i="share">Share</a> · <span class="mono" id="visits" dir="ltr">visits: ------</span></footer>
+
+<div class="modal" id="about" role="dialog" aria-modal="true" aria-labelledby="aboutH"><div class="box"><button class="x" data-close aria-label="Close">×</button><h2 id="aboutH" data-i="aboutTitle">About us</h2><p id="aboutText" class="soft"></p>
+<div class="team-grid" id="team"></div>
+<a class="btn" id="aboutDiscord" href="#" target="_blank" rel="noopener noreferrer" data-i="joinDiscord">Join our Discord</a></div></div>
+<div class="modal" id="contact" role="dialog" aria-modal="true" aria-labelledby="contactH"><div class="box"><button class="x" data-close aria-label="Close">×</button><h2 id="contactH" data-i="contactTitle">Contact</h2><p id="contactText" class="soft"></p><a class="btn" id="contactDiscord" href="#" target="_blank" rel="noopener noreferrer" data-i="openDiscord">Open Discord</a></div></div>
+<div class="modal" id="share" role="dialog" aria-modal="true" aria-labelledby="shareH"><div class="box"><button class="x" data-close aria-label="Close">×</button><h2 id="shareH" data-i="share">Share</h2><input id="shareUrl" readonly dir="ltr"><button class="btn" id="copyShare" data-i="copyLink">Copy link</button></div></div>
+
+<div class="modal" id="consent" role="dialog" aria-modal="true" aria-labelledby="cTitle"><div class="box">
+<button class="x" data-close aria-label="Close">×</button>
+<h2 id="cTitle" data-i="consentTitle">Before you download</h2>
+<p class="mono toolname" id="cTool" dir="ltr"></p>
+<p class="consent-text" data-i="consentText"></p>
+<label class="chk"><input type="checkbox" id="cAgree"><span data-i="consentCheck"></span></label>
+<p class="meta"><a href="#" data-open="terms" data-i="readTerms">Read the Terms of Use & Disclaimer</a></p>
+<div id="cf"></div>
+<div class="err" id="cErr" role="alert"></div>
+<button class="btn" id="cGo" disabled data-i="consentGo">I agree — download</button></div></div>
+<div class="modal" id="terms" role="dialog" aria-modal="true" aria-labelledby="termsH"><div class="box wide"><button class="x" data-close aria-label="Close">×</button><h2 id="termsH" data-i="terms">Terms & Disclaimer</h2><div id="termsBody" class="soft pre"></div></div></div>
+
+<script src="/app.js"></script></body></html>
